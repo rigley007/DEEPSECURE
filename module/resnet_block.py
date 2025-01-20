@@ -142,7 +142,7 @@ class ResnetBlock(nn.Module):
             torch.Tensor: Output tensor after residual connection
         """
         # Residual connection: output = input + conv_block(input)
-        out = x + self.conv_block(x)
+        out = x + self.conv_block(x) #残差连接
         return out
 
 #     def forward(self, x):
