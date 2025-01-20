@@ -3,6 +3,7 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 import config
 
+# Get loder of data
 def get_data_loaders():
     print('==> Preparing Imagenet 10 class data..')
     # Define the paths to the training and validation datasets
