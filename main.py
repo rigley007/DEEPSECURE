@@ -10,6 +10,12 @@ from pre_model_extractor import model_extractor
 if __name__ == '__main__':
     # Check if CUDA is available and print the result
     print("CUDA Available: ", torch.cuda.is_available())
+    logging.info("CUDA Available: %s", torch.cuda.is_available())
+    device = torch.device("cuda" if (cfg.use_cuda and torch.cuda.is_available()) else "cpu")
+    if cfg.use_cuda and not torch.cuda.is_available():
+        logging.warning("CUDA is enabled in the configuration, but no CUDA devices are available. Falling back to CPU.")
+    else:
+        logging.info("Using device: %s", device)
     # Set the device to CUDA if available and configured to use, otherwise use CPU
     device = torch.device("cuda" if (cfg.use_cuda and torch.cuda.is_available()) else "cpu")
 
