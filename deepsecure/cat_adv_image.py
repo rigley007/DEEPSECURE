@@ -145,7 +145,9 @@ class Cat_Adv_Gen:
             generator: Main generator model
             reg_g: Regular generator for noise generation (False if not used)
         """
+        # Store the device (CPU/GPU) on which the model will operate
         self.device = device
+        # Assign the feature extraction model for processing input features
         self.model_extractor = model_extractor
         self.generator = generator
         self.box_min = cfg.BOX_MIN  # Minimum pixel value
