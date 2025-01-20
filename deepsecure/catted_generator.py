@@ -130,6 +130,10 @@ class catted_generator(nn.Module):
             ]
             
         elif num_encoder_layers == 6:
+            # Decoder network for a 6-layer encoder architecture
+            # The decoder progressively upsamples features back to image size
+            # Input: 128-channel feature maps from encoder
+            # Output: 3-channel RGB image
             # Decoder for 6-layer encoder (128 input channels)
             decoder_lis = [
                 # First block: Process 128-channel features
