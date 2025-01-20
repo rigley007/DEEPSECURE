@@ -45,7 +45,9 @@ class regular_generator(nn.Module):
                 # state size. image_nc x 224 x 224
             ]
         elif num_encoder_layers == 6:
+            # Define a list of decoder layers when the number of encoder layers is 6
             decoder_lis = [
+                # Add a ResNet block with 128 feature channels
                 ResnetBlock(128),
                 ResnetBlock(128),
                 nn.UpsamplingNearest2d(scale_factor=2),
