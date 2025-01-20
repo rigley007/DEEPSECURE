@@ -91,8 +91,10 @@ class ResnetBlock(nn.Module):
         
         # First conv layer padding
         if padding_type == 'reflect':
+            # Use reflection padding, which mirrors the border pixels for padding
             conv_block += [nn.ReflectionPad2d(1)]
         elif padding_type == 'replicate':
+            # Use replication padding, which replicates the border pixels for padding
             conv_block += [nn.ReplicationPad2d(1)]
         elif padding_type == 'zero':
             p = 1  # Use padding in conv layer instead
