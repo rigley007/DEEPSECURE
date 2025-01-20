@@ -19,6 +19,10 @@ def weights_init(m):
 
 
 class Adv_Gen:
+    # Initialize the adversarial generator class with essential components.
+    # `device`: Specifies the computation device (e.g., CPU or GPU).
+    # `model_extractor`: Pre-trained feature extraction model used to extract important features.
+    # `generator`: Neural network model responsible for generating adversarial examples.
     def __init__(self,
                  device,
                  model_extractor,
