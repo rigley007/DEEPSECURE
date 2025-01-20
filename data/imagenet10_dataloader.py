@@ -3,6 +3,7 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 import config
 
+# TODO: Add self-defined and flexible data generators to enable more diverse types of data augmentations.
 def get_data_loaders():
     print('==> Preparing Imagenet 10 class data..')
     # Define the paths to the training and validation datasets
