@@ -6,8 +6,8 @@ import config
 def get_data_loaders():
     print('==> Preparing Imagenet 10 class data..')
     # Define the paths to the training and validation datasets
-    traindir = config.imagenet10_traindir  # Path to the training data
-    valdir = config.imagenet10_valdir     # Path to the validation data
+    traindir = config.imagenet10_traindir  
+    valdir = config.imagenet10_valdir     
 
     # Normalization transform: scales the image tensors to a standard range
     # These mean and std values are commonly used for ImageNet datasets
