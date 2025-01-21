@@ -41,6 +41,7 @@ def get_data_loaders():
             # Normalize the images using the predefined normalization
             normalize,
         ])),
+        
         #Define the batchsize
         batch_size=config.batch_size, shuffle=False,  # Do not shuffle validation data
         num_workers=4, pin_memory=True)  # Use 4 worker threads and pin memory for faster data transfer
