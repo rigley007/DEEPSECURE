@@ -5,12 +5,14 @@ import config
 
 def get_data_loaders():
     print('==> Preparing Imagenet 10 class data..')
+    
     # Define the paths to the training and validation datasets
     traindir = config.imagenet10_traindir  # Path to the training data
     valdir = config.imagenet10_valdir     # Path to the validation data
 
     # Normalization transform: scales the image tensors to a standard range
     # These mean and std values are commonly used for ImageNet datasets
+    
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])  # Standard ImageNet normalization values
     
@@ -23,7 +25,7 @@ def get_data_loaders():
             transforms.RandomHorizontalFlip(),
             # Convert images to PyTorch tensors
             transforms.ToTensor(),
-            # Normalize the images using the predefined normalization
+            # Normalize the images
             normalize,
         ])),
         batch_size=config.batch_size, shuffle=True,  # Shuffle data for better training
