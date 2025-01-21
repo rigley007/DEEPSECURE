@@ -24,9 +24,12 @@ class model_extractor(nn.Module):
             raise("Not support on this architecture yet")
 
         # Extract the first `num_layers` layers from the pretrained model
+        
         self.features = nn.Sequential(*list(original_model.children())[:num_layers])
 
+        
         # Optionally freeze the weights of the extracted layers
+        
         if fix_weights == True:
             for p in self.features.parameters():
                 p.requires_grad = False
