@@ -130,7 +130,7 @@ class ResnetBlock(nn.Module):
             nn.Conv2d(dim, dim, kernel_size=3, padding=p, bias=use_bias),
             norm_layer(dim)
         ]
-        
+        # Return the constructed convolutional block as an nn.Sequential.
         return nn.Sequential(*conv_block)
 
     def forward(self, x):
