@@ -18,7 +18,7 @@ def weights_init(m):
         nn.init.normal_(m.weight.data, 1.0, 0.02)
         nn.init.constant_(m.bias.data, 0)
 
-# define class Adv_Gen
+
 class Adv_Gen:
     def __init__(self,
                  device,
@@ -90,7 +90,6 @@ class Adv_Gen:
 
                 loss_adv_batch, adv_img = self.train_batch(images)
                 loss_adv_sum += loss_adv_batch
-
 
             # print statistics
 
