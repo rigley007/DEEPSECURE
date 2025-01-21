@@ -98,9 +98,11 @@ class Adv_Gen:
                                          adv_img_path + str(epoch) + ".png",
                                          normalize=True, scale_each=True, nrow=7)
             num_batch = len(train_dataloader)
+            
             print("epoch %d:\n loss_adv: %.3f, \n" %
                   (epoch, loss_adv_sum/num_batch))
-            # save generator
+            
+            # save generator  
             if epoch%20==0:
                 netG_file_name = models_path + 'netG_epoch_' + str(epoch) + '.pth'
                 torch.save(self.generator.state_dict(), netG_file_name)
