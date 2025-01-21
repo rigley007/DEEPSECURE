@@ -75,6 +75,8 @@ from module.pre_model_extractor import model_extractor
 import config as cfg
 
 class catted_generator(nn.Module):
+
+    
     """Concatenated Generator that processes and combines features from two inputs.
     
     This generator uses a shared encoder for both inputs and concatenates their
@@ -89,7 +91,6 @@ class catted_generator(nn.Module):
             num_encoder_layers (int): Number of ResNet layers to use as encoder (5-7)
             fix_encoder (bool): Whether to freeze encoder weights
             tagged (bool): Flag for tagged/marked sample processing
-            
         Raises:
             RuntimeError: If num_encoder_layers < 5 (unsupported configuration)
         """
@@ -132,6 +133,7 @@ class catted_generator(nn.Module):
         elif num_encoder_layers == 6:
             # Decoder for 6-layer encoder (128 input channels)
             decoder_lis = [
+                
                 # First block: Process 128-channel features
                 ResnetBlock(128),
                 ResnetBlock(128),
@@ -149,6 +151,7 @@ class catted_generator(nn.Module):
             ]
             
         elif num_encoder_layers == 5:
+            
             # Decoder for 5-layer encoder (64*2=128 input channels after concatenation)
             decoder_lis = [
                 # Process concatenated features
