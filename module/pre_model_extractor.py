@@ -26,11 +26,14 @@ class model_extractor(nn.Module):
         # Extract the first `num_layers` layers from the pretrained model
         self.features = nn.Sequential(*list(original_model.children())[:num_layers])
 
-        # Optionally freeze the weights of the extracted layers
+        # Optionally freeze the weights of the extracted layers.
+        
         if fix_weights == True:
             for p in self.features.parameters():
                 p.requires_grad = False
-        # Store the name of the architecture for reference
+
+        
+        # Store the name of the architecture for reference.
         self.modelName = arch
 
     def forward(self, x):
