@@ -64,7 +64,6 @@
 #         x_t_1 = self.encoder(x1)
 #         x_t_2 = self.encoder(x2)
 #         out = self.decoder(torch.cat((x_t_1, x_t_2),1))
-
 #         return out, x_t_2
 
 
