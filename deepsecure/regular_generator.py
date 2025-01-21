@@ -42,6 +42,7 @@ class regular_generator(nn.Module):
                 nn.UpsamplingNearest2d(scale_factor=2),
                 nn.ConvTranspose2d(64, 3, kernel_size=7, stride=2, padding=3, output_padding=1, bias=False),
                 nn.Tanh()
+                
                 # state size. image_nc x 224 x 224
             ]
         elif num_encoder_layers == 6:
