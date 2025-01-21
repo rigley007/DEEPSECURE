@@ -1,4 +1,4 @@
-# import torch.nn as nn
+import torch.nn as nn
 
 # # Define a resnet block
 # # modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/models/networks.py
