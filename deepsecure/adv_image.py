@@ -9,7 +9,8 @@ import config as cfg
 models_path = cfg.models_path
 adv_img_path = cfg.adv_img_path
 
-# custom weights initialization called on netG and netD
+# custom weights initialization: netG and netD
+
 def weights_init(m):
     classname = m.__class__.__name__
     if classname.find('Conv') != -1:
