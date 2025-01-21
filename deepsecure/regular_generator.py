@@ -14,6 +14,8 @@ class regular_generator(nn.Module):
     to the encoded representation before decoding.
     """
 
+    
+
     def __init__(self,
                  num_encoder_layers,
                  fix_encoder,
