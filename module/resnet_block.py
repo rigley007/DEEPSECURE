@@ -73,9 +73,7 @@ class ResnetBlock(nn.Module):
     def build_conv_block(self, dim, padding_type, norm_layer, use_dropout, use_bias):
         """Construct the convolutional block within the ResNet block.
         
-        The block consists of:
         Conv1 -> Norm1 -> ReLU -> (Dropout) -> Conv2 -> Norm2
-        
         Args:
             dim (int): Number of input/output channels
             padding_type (str): Type of padding to use
