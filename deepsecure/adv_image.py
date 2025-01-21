@@ -91,7 +91,6 @@ class Adv_Gen:
                 loss_adv_batch, adv_img = self.train_batch(images)
                 loss_adv_sum += loss_adv_batch
 
-
             # print statistics
 
             torchvision.utils.save_image(torch.cat((adv_img[:7], images[:7])),
