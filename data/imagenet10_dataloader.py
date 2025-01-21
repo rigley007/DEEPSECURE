@@ -1,3 +1,4 @@
+#import
 import torch
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
@@ -44,5 +45,5 @@ def get_data_loaders():
         #Define the batchsize
         batch_size=config.batch_size, shuffle=False,  # Do not shuffle validation data
         num_workers=4, pin_memory=True)  # Use 4 worker threads and pin memory for faster data transfer
-
+    # Return the data loaders for training and validation datasets
     return train_loader, val_loader
