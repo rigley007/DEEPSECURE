@@ -13,7 +13,8 @@ if __name__ == '__main__':
     print("CUDA Available: ", torch.cuda.is_available())
     # Set the device to CUDA if available and configured to use, otherwise use CPU
     device = torch.device("cuda" if (cfg.use_cuda and torch.cuda.is_available()) else "cpu")
-
+    # Load training and validation data using custom data loaders
+    # These contain the ImageNet10 dataset split into training and validation sets
     # Get the data loaders for training and validation datasets
     train_loader, val_loader = get_data_loaders()
 
