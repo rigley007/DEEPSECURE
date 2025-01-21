@@ -5,7 +5,7 @@ import torchvision.models as pre_models
 # Return first n layers of a pretrained model
 class model_extractor(nn.Module):
     """
-        Initialize the model extractor.
+        Initialize 
         Parameters:
         - arch (str): The architecture of the pretrained model ('alexnet', 'resnet', 'vgg16', etc.).
         - num_layers (int): The number of layers to extract from the model.
