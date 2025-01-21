@@ -11,9 +11,13 @@ class model_extractor(nn.Module):
         - num_layers (int): The number of layers to extract from the model.
         - fix_weights (bool): If True, freeze the weights of the extracted layers to prevent training.
     """
+
+    
     def __init__(self, arch, num_layers, fix_weights):
         super(model_extractor, self).__init__()
+        
         # Load the specified pretrained model
+        
         if arch.startswith('alexnet') :
             original_model = pre_models.alexnet(pretrained=True)
         elif arch.startswith('resnet') :
