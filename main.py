@@ -43,5 +43,4 @@ if __name__ == '__main__':
         # Create an instance of Adv_Gen with the regular generator
         advGen = Adv_Gen(device, feature_ext, generator)
 
-    advGen.train(train_loader, cfg.epochs)
-
+    advGen.train(train_loader, cfg.epochs) 
