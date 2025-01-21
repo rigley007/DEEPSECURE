@@ -42,7 +42,7 @@
 #         if self.noise_generator != False:
 #             self.noise_generator.to(device)
 
-#         # initialize optimizers
+
 #         self.optimizer_G = torch.optim.Adam(self.generator.parameters(),
 #                                             lr=0.001)
 
