@@ -12,7 +12,9 @@ def get_data_loaders():
     # Normalization transform: scales the image tensors to a standard range
     # These mean and std values are commonly used for ImageNet datasets
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])  # Standard ImageNet normalization values
+                                     std=[0.229, 0.224, 0.225]) 
+
+
     
     # Define the data loader for the training dataset
     train_loader = torch.utils.data.DataLoader(
@@ -26,7 +28,7 @@ def get_data_loaders():
             # Normalize the images using the predefined normalization
             normalize,
         ])),
-        batch_size=config.batch_size, shuffle=True,  # Shuffle data for better training
+        batch_size=config.batch_size, shuffle=True,  # Shuffle data 
         num_workers=4, pin_memory=True)  # Use 4 worker threads and pin memory for faster data transfer
 
     # Define the data loader for the validation dataset
