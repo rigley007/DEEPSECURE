@@ -59,7 +59,6 @@ class ResnetBlock(nn.Module):
                  use_dropout=False, use_bias=False):
         """Initialize the ResNet block.
         
-        Args:
             dim (int): Number of channels in input and output
             padding_type (str): Type of padding ('reflect', 'replicate', or 'zero')
             norm_layer (nn.Module): Normalization layer to use (default: BatchNorm2d)
