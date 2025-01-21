@@ -17,9 +17,9 @@ def get_data_loaders():
     # Define the data loader for the training dataset
     train_loader = torch.utils.data.DataLoader(
         datasets.ImageFolder(traindir, transforms.Compose([
-            # Data augmentation: random resizing and cropping to 224x224
+            #  random resizing and cropping to 224x224
             transforms.RandomResizedCrop(224),
-            # Data augmentation: random horizontal flip
+            # random horizontal flip
             transforms.RandomHorizontalFlip(),
             # Convert images to PyTorch tensors
             transforms.ToTensor(),
