@@ -19,7 +19,9 @@ class regular_generator(nn.Module):
                  fix_encoder,
                  tagged,
                  ):
+                     
         # Initialize parent class (nn.Module)
+                     
         super(regular_generator, self).__init__()
 
         self.encoder = model_extractor('resnet18', num_encoder_layers, fix_encoder)
@@ -31,14 +33,19 @@ class regular_generator(nn.Module):
             decoder_lis = [
                 ResnetBlock(256),
                 ResnetBlock(256),
+                
                 nn.UpsamplingNearest2d(scale_factor=2),
                 nn.ConvTranspose2d(256, 128, kernel_size=1, stride=1, bias=False),
+                
                 ResnetBlock(128),
                 ResnetBlock(128),
+                
                 nn.UpsamplingNearest2d(scale_factor=2),
                 nn.ConvTranspose2d(128, 64, kernel_size=1, stride=1, bias=False),
+                
                 ResnetBlock(64),
                 ResnetBlock(64),
+                
                 nn.UpsamplingNearest2d(scale_factor=2),
                 nn.ConvTranspose2d(64, 3, kernel_size=7, stride=2, padding=3, output_padding=1, bias=False),
                 nn.Tanh()
