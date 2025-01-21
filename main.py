@@ -16,7 +16,12 @@ if __name__ == '__main__':
 
     # Get the data loaders for training and validation datasets
     train_loader, val_loader = get_data_loaders()
-
+    # Initialize the feature extractor using a pre-trained model
+    # This will extract intermediate features from images for adversarial generation
+    # Parameters:
+    #   - pretrained_model_arch: Architecture type (e.g., ResNet, VGG)
+    #   - num_layers_ext: Number of layers to extract features from
+    #   - ext_fixed: Whether to freeze the extractor weights
     # Extract features using a pre-trained model
     feature_ext = model_extractor(cfg.pretrained_model_arch, cfg.num_layers_ext, cfg.ext_fixed)
 
