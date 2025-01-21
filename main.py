@@ -23,6 +23,7 @@ if __name__ == '__main__':
     # Check if concatenated generator is to be used
     if cfg.cat_G:
         if cfg.noise_img:
+            # Load pre-trained regular generator for noise handling
             # Initialize and load the regular generator with noise images
             reg_generator = regular_generator(cfg.num_layers_ext, cfg.ext_fixed, cfg.G_tagged)
             reg_generator.load_state_dict(torch.load(cfg.noise_g_path))
